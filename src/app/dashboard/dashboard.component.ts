@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
-//import * as Chartist from 'chartist';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +9,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
   
 
 

@@ -23,3 +23,4 @@ describe('TableListComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

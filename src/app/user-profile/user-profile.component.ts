@@ -1,24 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
-import * as _ from 'lodash';
 
-
-interface User{
-	firstName: string;
-	lastName: string;
-	email: string;
-	password: string;
-	token_User : string;
-}
-
-interface Shop{
-	id_Shop : string;
-	name_Shop : string;
-	description_Shop : string;
-	id_Member : string;
-	password : string;
-}
 
 @Component({
   selector: 'app-user-profile',
@@ -27,47 +10,68 @@ interface Shop{
 })
 export class UserProfileComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
+private user: Array<string>;
+
+private newUser: Array<string>;
+
+private newShop: Array<string>;
+
+private updateUser: Array<string>;
+
+
+
+  constructor(private http:HttpClient) { 
+  this.user = new Array;
+  this.user = {"email" : "jc@d.uss","password" : "troc"};
+
+  this.newUser = new Array;
+  this.newUser = {"firstName":"leo","lastName":"solal","email" : "jc@d.uss","password" : "troc"};
+
+  this.newShop = new Array;
+  this.newShop = {"user_id": 2,"token":"sfhus","name":"la boutique a Jean-Claude", "description":"la boutique du celebre Jean-Claude Duss" };
+
+  this.updateUser = new Array;
+  this.updateUser = {"id": 9,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI5In0.t_Ds0SFDatCx5yZl7BHfOLRnCP17d_ai7L8x0EjLLhA","firstName":"dong", "lastName":"ding", "email":"lion@plan.flop","password":"plopplop"};
+
+}
+
+
+ bidule = true;
+ connexion(this.bidule){
+  this.bidule = false;
+ }
+
+deconnexion(this.bidule){
+  this.bidule = true;
+}
+
+
+
 
   ngOnInit() {
 
-  	//get user
-  	this.http.get<User>('http:resources/').subscribe(data =>{
-  		console.log("firstName: " + data.firstName);
-  		console.log("lastName: " + data.lastName);
-  		console.log("email: " + data.email);	
-  		console.log("password: " + data.password);
-  	});
 
-  	//get Shop
-  	this.http.get<Shop>('http:').subscribe(data =>{
-  		console.log("id_Shop: " + data.id_Shop);
-  		console.log("name_Shop: " + data.name_Shop);
-  		console.log("description_Shop: " + data.description_Shop);	
-  		console.log("id_Member: " + data.id_Member);
-  	});
-
+      //console.log(this.user);
+      //console.log(this.newUser);
+      //console.log(this.newShop);
+      //console.log(this.updateUser);
+    
+    
+    
+ /*   
     //post newUser
-    this.http.post('http://jsonplaceholder.typicode.com/posts', {
-      firstName: 'Jean-Claude',
-      lastName: 'Duss',
-      email: 'JCDuss@gmail.com',
-      password : 'azerty',
-      token_User : 1
-    })
+    this.http.post('http://localhost:8080/myapp/auth/member',
+      this.newUser)
       .subscribe(
         res => {
           console.log(res);
         },
     );
 
+
     //post newShop
-    this.http.post('http://jsonplaceholder.typicode.com/posts', {
-      name_Shop: 'Duss',
-      password: 'xxxxxx',
-      description_Shop : 'Yikes',
-      id_Member : 'xxxxxx'
-    })
+    this.http.post('http://localhost:8080/myapp/shop/',
+    this.newShop)
       .subscribe(
         res => {
           console.log(res);
@@ -75,15 +79,27 @@ export class UserProfileComponent implements OnInit {
     );
 
     //post connexion
-    this.http.post('http://jsonplaceholder.typicode.com/posts', {
-      email: 'JCDuss',
-      password: 'azerty',
-    })
+    this.http.post('http://localhost:8080/myapp/auth/login',
+      this.user)
       .subscribe(
         res => {
           console.log(res);
         },
     );
+
+
+
+
+*/
+    //put UpdateUser
+    this.http.put('http://localhost:8080/myapp/member', 
+    this.updateUser)
+      .subscribe(
+        res => {
+          console.log(res);
+        },
+    );
+
   }
 
 }

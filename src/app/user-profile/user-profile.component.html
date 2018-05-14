@@ -4,7 +4,7 @@
           <div class="col-md-8">
 
 
-            <div> <!--*ngIf=localstorage.logedIn=='true'-->
+            <div *ngIf="bidule == true">
               <div class="card">
                   <div class="card-header card-header-danger">
                       <h4 class="card-title">Inscription</h4>
@@ -14,7 +14,7 @@
                           <div class="row">
                               <div class="col-md-4">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="email" type="email">
+                                    <input matInput placeholder="email" type="text">
                                   </mat-form-field>
                               </div>
                           </div>
@@ -37,7 +37,7 @@
                                  </mat-form-field>
                               </div>
                           </div>
-                          <button mat-raised-button type="submit" class="btn btn-danger pull-right">Inscription</button>
+                          <button mat-raised-button (click)="connexion()" class="btn btn-danger pull-right">Inscription</button>
                           <div class="clearfix"></div>
                       </form>
                   </div>
@@ -65,7 +65,7 @@
                                  </mat-form-field>
                               </div>
                           </div>
-                          <button mat-raised-button type="submit" class="btn btn-danger pull-right">Connexion</button>
+                          <button mat-raised-button (click)="connexion()" class="btn btn-danger pull-right">Connexion</button>
                           <div class="clearfix"></div>
                       </form>
                   </div>
@@ -75,7 +75,7 @@
 
 
 
-            <div> <!--ngIf="//!\\ condition d'affichage : connecté localstorage==true"-->
+            <div *ngIf="bidule == false">
               <div class="card">
                   <div class="card-header card-header-danger">
                       <h4 class="card-title">Editer le profil</h4>
@@ -101,13 +101,7 @@
                                 </mat-form-field>
                               </div>
                           </div>
-                          <div class="row">
-                              <div class="col-md-12">
-                                <mat-form-field class="example-full-width">
-                                   <input matInput placeholder="password" type="text">
-                                 </mat-form-field>
-                              </div>
-                          </div>
+                         
                           <button mat-raised-button type="submit" class="btn btn-danger pull-right">Editer</button>
                           <div class="clearfix"></div>
                       </form>
@@ -141,7 +135,19 @@
                       </form>
                   </div>
               </div>
-            </div>
+
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Deconnexion</h4>
+                  </div>
+                  <div class="card-body">
+                      <form>
+                          <button mat-raised-button (click)="deconnexion()" class="btn btn-danger pull-right">Deconnexion</button>
+                          <div class="clearfix"></div>
+                      </form>
+                  </div>
+              </div>
+            </div>            
 
 
           </div>

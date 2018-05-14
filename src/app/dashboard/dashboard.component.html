@@ -10,7 +10,6 @@
 
               
               <div class="nav-tabs-wrapper">
-                <!-- <span class="nav-tabs-title">Dashboard</span> -->
                 <ul class="nav nav-tabs" data-tabs="tabs">
                   <li class="nav-item">
                     <a mat-button class="nav-link active" href="#profile" data-toggle="tab">
@@ -20,13 +19,13 @@
                   </li>
                   <li class="nav-item">
                     <a mat-button class="nav-link" href="#messages" data-toggle="tab">
-                      <i class="material-icons">stars</i> Mes favoris
+                      <i class="material-icons">shopping_basket</i> Mes produits
                       <div class="ripple-container"></div>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a mat-button class="nav-link" href="#settings" data-toggle="tab">
-                      <i class="material-icons">notifications</i> Mes Notifs
+                      <i class="material-icons">shop</i> Mes shops
                       <div class="ripple-container"></div>
                     </a>
                   </li>
@@ -39,19 +38,100 @@
           <div class="card-body">
             <div class="tab-content">
               <div class="tab-pane active" id="profile">
-                <table class="table">
-                  <tbody>
-
-                  </tbody>
-                </table>
-              </div>
+                              <table class="table">
+                                  <tbody>
+                                      <tr>
+                                          <td>
+                                              <div class="form-check">
+                                                  <label class="form-check-label">
+                                                      <span class="form-check-sign">
+                                                          <span class="check"></span>
+                                                      </span>
+                                                  </label>
+                                              </div>
+                                          </td>
+                                          <td>Chat avec leShopDeMamie</td>
+                                          <td class="td-actions text-right">
+                                              <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                                  <i class="material-icons">close</i>
+                                              </button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td>
+                                              <div class="form-check">
+                                                  <label class="form-check-label">
+                                                      <span class="form-check-sign">
+                                                          <span class="check"></span>
+                                                      </span>
+                                                  </label>
+                                              </div>
+                                          </td>
+                                          <td>Chat avec LeLapinVert</td>
+                                          <td class="td-actions text-right">
+                                              <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                                  <i class="material-icons">close</i>
+                                              </button>
+                                          </td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </div>
               <div class="tab-pane" id="messages">
                 <table class="table">
                   <tbody>
-
+                        <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Mes Produits</h4>
+                  </div>
+                  <div class="card-body table-responsive">
+                      <table class="table table-hover">
+                          <thead class="text-warning">
+                              <th>Nom Produits</th>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td>Tomates</td>
+                              </tr>
+                              <tr>
+                                  <td>Salades</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
                   </tbody>
                 </table>
               </div>
+
+              <div class="tab-pane" id="settings">
+                <table class="table">
+                  <tbody>
+                        <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Mes Shops</h4>
+                  </div>
+                  <div class="card-body table-responsive">
+                      <table class="table table-hover">
+                          <thead class="text-warning">
+                              <th>Nom Shops</th>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td>PommeDePin</td>
+                              </tr>
+                              <tr>
+                                  <td>LeShopDeMamie</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+                  </tbody>
+                </table>
+              </div>
+
+
             </div>
           </div>
 
